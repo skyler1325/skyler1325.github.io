@@ -1,0 +1,47 @@
+<head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #fdf6e3; /* soft chick yellow vibe */
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1, h3 {
+      color: #ffac33; /* vibrant orange headline */
+    }
+
+    img {
+      max-width: 200px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.1); /* give Qwert a little bounce! */
+    }
+  </style>
+</head>
+<body>
+	<h1>qwerty qwert?</h1>
+	<img id="qwert" src="chick.png" alt="Qwert the Chick">
+	<video id="danceVideo" src="dance.mp4" style="display:none;" muted></video>
+	
+	<script>
+	const qwertImg = document.getElementById("qwert");
+	const danceVideo = document.getElementById("danceVideo");
+	
+	qwertImg.addEventListener("click", () => {
+		qwertImg.style.display = "none";          // Hide image
+		danceVideo.style.display = "block";       // Show video
+		danceVideo.play();                         // Start video
+	});
+	
+	danceVideo.addEventListener("ended", () => {
+		danceVideo.style.display = "none";        // Hide video after playback
+		qwertImg.style.display = "block";         // Show image again
+	});
+	</script>
+</body> 
